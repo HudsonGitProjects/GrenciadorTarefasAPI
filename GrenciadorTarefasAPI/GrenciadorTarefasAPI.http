@@ -1,0 +1,6 @@
+@GrenciadorTarefasAPI_HostAddress = http://localhost:5029
+
+GET {{GrenciadorTarefasAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
