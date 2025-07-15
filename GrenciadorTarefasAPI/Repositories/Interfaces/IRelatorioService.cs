@@ -1,8 +1,12 @@
-﻿namespace GrenciadorTarefasAPI.Repositories.Interfaces
+﻿using GrenciadorTarefasAPI.Models;
+
+namespace GrenciadorTarefasAPI.Repositories.Interfaces
 {
     public interface IRelatorioService
     {
-        Task<double> ObterMediaTarefasConcluidasUltimos30DiasAsync();
+        Task<double> ObterMediaTarefasConcluidasAsync();
+        Task<List<HistoricoTarefa>> ObterRelatorioDesempenhoAsync();
+
 
     }
 }

@@ -45,7 +45,6 @@ namespace GrenciadorTarefasAPI.Repositories
             if (projeto == null)
                 return false;
 
-            // Regra de negócio: não pode excluir se tiver tarefas pendentes
             bool possuiPendentes = projeto.Tarefas.Any(t => t.Status == StatusTarefa.Pendente);
             if (possuiPendentes)
                 return false;

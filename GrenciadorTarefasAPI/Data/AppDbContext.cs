@@ -13,9 +13,10 @@ namespace GrenciadorTarefasAPI.Data
         public DbSet<HistoricoTarefa> Historicos { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) { 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
-       
+
             modelBuilder.Entity<Tarefa>()
                 .Property(t => t.Prioridade)
                 .HasConversion<string>();
@@ -53,9 +54,14 @@ namespace GrenciadorTarefasAPI.Data
             modelBuilder.Entity<Projeto>()
                 .Property(p => p.Nome)
                 .IsRequired();
+        }
 
+           public async Task<List<HistoricoTarefa>> ObterRelatorioDesempenhoAsync()
+            {
+                return await Historicos.ToListAsync();
+            }
 
 
         }
     }
-}
+

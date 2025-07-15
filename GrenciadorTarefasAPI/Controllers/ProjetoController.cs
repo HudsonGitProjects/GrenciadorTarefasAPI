@@ -34,7 +34,6 @@ namespace GrenciadorTarefasAPI.Controllers
             return Ok(projeto);
         }
 
-        // Fixing the CS1503 error by modifying the Criar method to create a Projeto object from the provided string.
 
         [HttpPost]
         public async Task<ActionResult<Projeto>> Criar([FromBody] string nome)
@@ -42,10 +41,8 @@ namespace GrenciadorTarefasAPI.Controllers
             if (string.IsNullOrWhiteSpace(nome))
                 return BadRequest("Nome do projeto é obrigatório.");
 
-            // Create a new Projeto object using the provided name
             var novoProjeto = new Projeto { Nome = nome };
 
-            // Pass the Projeto object to the service
             var criado = await _projetoService.CriarAsync(novoProjeto);
             return CreatedAtAction(nameof(ObterPorId), new { id = criado.Id }, criado);
         }

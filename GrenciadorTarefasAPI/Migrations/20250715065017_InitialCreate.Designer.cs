@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrenciadorTarefasAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250714225635_InitialCreate")]
+    [Migration("20250715065017_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

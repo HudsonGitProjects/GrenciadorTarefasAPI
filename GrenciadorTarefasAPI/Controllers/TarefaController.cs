@@ -45,8 +45,8 @@ namespace GrenciadorTarefasAPI.Controllers
                 if (tarefa == null)
                     return BadRequest("Tarefa inválida.");
 
-                var atualizada = await _tarefaService.AtualizarAsync(tarefa, "mock-usuario"); //adicionar  id
-                if (atualizada == null) // Fix: Check if the result is null instead of using '!'
+                var atualizada = await _tarefaService.AtualizarAsync(tarefa, "mock-usuario"); 
+                if (atualizada == null) 
                     return NotFound("Tarefa não encontrada ou prioridade inválida.");
 
                 return NoContent();

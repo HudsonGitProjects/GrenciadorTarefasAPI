@@ -19,7 +19,7 @@ namespace GrenciadorTarefasAPI.Controllers
         [HttpGet("desempenho")]
         public async Task<ActionResult<double>> ObterMediaConclusao()
         {
-            var media = await _relatorioService.ObterMediaTarefasConcluidasUltimos30DiasAsync();//resumir esse nome 
+            var media = await _relatorioService.ObterMediaTarefasConcluidasAsync();
             return Ok(media);
         }
     }
