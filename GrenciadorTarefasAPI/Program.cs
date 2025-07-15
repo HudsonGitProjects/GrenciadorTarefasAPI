@@ -2,6 +2,7 @@ using GrenciadorTarefasAPI.Data;
 using GrenciadorTarefasAPI.Repositories;
 using GrenciadorTarefasAPI.Repositories.Interfaces;
 using GrenciadorTarefasAPI.Services;
+using GrenciadorTarefasAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Globalization;
@@ -14,11 +15,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-//builder.Services.AddScoped<IProjetoRepository, ProjetoRepository>();
-//builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
-//builder.Services.AddScoped<IRelatorioService, RelatorioService>();
-//builder.Services.AddScoped<IProjetoService, ProjetoService>();
-//builder.Services.AddScoped<ITarefaService, TarefaService>();
+builder.Services.AddScoped<IProjetoRepository, ProjetoRepository>();
+builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
+builder.Services.AddScoped<IRelatorioService, RelatorioService>();
+builder.Services.AddScoped<IProjetoService, ProjetoService>();
+builder.Services.AddScoped<ITarefaService, TarefaService>();
 
 
 

@@ -1,10 +1,11 @@
 ﻿using GrenciadorTarefasAPI.Data;
 using GrenciadorTarefasAPI.Models;
+using GrenciadorTarefasAPI.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GrenciadorTarefasAPI.Repositories
 {
-    public class TarefaRepository
+    public class TarefaRepository : ITarefaRepository
     {
         private readonly AppDbContext _context;
 
@@ -67,6 +68,16 @@ namespace GrenciadorTarefasAPI.Repositories
             _context.Historicos.Add(historico);
             await _context.SaveChangesAsync();
         }
-}
+
+        public Task<Tarefa> CriarTarefaAsync(Tarefa tarefa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AtualizarTarefaAsync(Tarefa tarefa)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
     
