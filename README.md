@@ -26,8 +26,7 @@ Sistema RESTful para gerenciamento de tarefas, projetos e histórico de alteraç
 - Regras de negócio para prioridade, remoção e limite
 - Relatório de desempenho por usuário (últimos 30 dias)
 - Swagger UI para documentação da API
-- Testes automatizados com +80% de cobertura
-
+- Testes automatizados 
 ---
 
 ##  Como Executar o Projeto
