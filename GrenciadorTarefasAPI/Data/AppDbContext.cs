@@ -25,28 +25,25 @@ namespace GrenciadorTarefasAPI.Data
                 .Property(t => t.Status)
                 .HasConversion<string>();
 
-            // Projeto -> Tarefas (1:N)
             modelBuilder.Entity<Tarefa>()
                 .HasOne(t => t.Projeto)
                 .WithMany(p => p.Tarefas)
                 .HasForeignKey(t => t.ProjetoId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Tarefa -> Comentários (1:N)
             modelBuilder.Entity<Comentario>()
                 .HasOne(c => c.Tarefa)
                 .WithMany(t => t.Comentarios)
                 .HasForeignKey(c => c.TarefaId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Tarefa -> Histórico (1:N)
             modelBuilder.Entity<HistoricoTarefa>()
                 .HasOne(h => h.Tarefa)
-                .WithMany() // se quiser histórico navegável da tarefa, troque por .WithMany(t => t.Historicos)
+                .WithMany() 
                 .HasForeignKey(h => h.TarefaId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Campos obrigatórios
+
             modelBuilder.Entity<Tarefa>()
                 .Property(t => t.Titulo)
                 .IsRequired();
